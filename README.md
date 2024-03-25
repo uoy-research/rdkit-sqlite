@@ -1,4 +1,4 @@
-# MCM Advanced Search Tool
+# rdkit-sqlite
 
 ## Setup
 
