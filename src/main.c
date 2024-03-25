@@ -23,9 +23,8 @@ static void mol_search_func(
   int argc,
   sqlite3_value **argv
 ){
-  //sqlite3_result_text(context, (char*)zOut, i, SQLITE_TRANSIENT);
-  //sqlite3_result_text(context, canon_smiles(), i, SQLITE_TRANSIENT);
-  sqlite3_result_double(context, strlen(canon_smiles()));
+  char *out = canon_smiles();
+  sqlite3_result_text(context, out, strlen(out), SQLITE_TRANSIENT);
 }
 
 int sqlite3_rdkit_init(
