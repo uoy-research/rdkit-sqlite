@@ -17,3 +17,10 @@ SQLite extension test:
 - Create `sqlite/build` directory
 - Execute `sqlite/build.sh`
 - Execute `sqlite/run.sh`
+
+Complete test:
+
+- Copy `librdkitcffi` into `complete/lib`
+- Copy MCM database file to `complete/data.db`
+- Execute `complete/build.sh`
+- Execute `complete/run.sh`
