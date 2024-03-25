@@ -1,2 +1,2 @@
-.load build/librdkit
+.load build/librdkitsqlite
 SELECT SMILES, mol(SMILES) FROM species

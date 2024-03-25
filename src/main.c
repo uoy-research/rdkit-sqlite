@@ -28,7 +28,7 @@ static void mol_search_func(
   sqlite3_result_double(context, strlen(canon_smiles()));
 }
 
-int sqlite3_rdkit_init(
+int sqlite3_rdkitsqlite_init(
   sqlite3 *db, 
   char **pzErrMsg, 
   const sqlite3_api_routines *pApi
