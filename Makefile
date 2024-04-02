@@ -1,4 +1,4 @@
-RDBASE=$(HOME)/Code/rdkit/rdkit
+RDBASE=rdkit/rdkit
 
 SHELL=/bin/sh
 CC=gcc
