@@ -5,16 +5,7 @@
 #include "sqlite3ext.h" /* Do not use <sqlite3.h>! */
 SQLITE_EXTENSION_INIT1
 
-static char *canon_smiles(char *mol_string){
-  char *pkl;
-  size_t pkl_size;
-  
-  pkl = get_mol(mol_string, &pkl_size,"");
-  char *smiles=get_smiles(pkl,pkl_size,NULL);
-  free(pkl);
-
-  return smiles;
-}
+#include "utils.h"
 
 static void mol_search_func(
   sqlite3_context *context,
