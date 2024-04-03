@@ -9,14 +9,8 @@ static char *canon_smiles(char *mol_string){
   char *pkl;
   size_t pkl_size;
   
-  printf("fjkdjf\n");
-  printf("%s\n", mol_string);
-  printf("fjkdjf\n");
-
   pkl = get_mol(mol_string, &pkl_size,"");
   char *smiles=get_smiles(pkl,pkl_size,NULL);
-  // canon_smiles()
-  printf("Canonical SMILES: %s\n",smiles);
   free(pkl);
 
   return smiles;
@@ -27,8 +21,7 @@ static void mol_search_func(
   int argc,
   sqlite3_value **argv
 ){
-  printf("%s\n", sqlite3_value_text(argv[1]));
-  char *mol_string = (char *)sqlite3_value_text(argv[1]);
+  char *mol_string = (char *)sqlite3_value_text(argv[0]);
   char *out = canon_smiles(mol_string);
   sqlite3_result_text(context, out, strlen(out), SQLITE_TRANSIENT);
 }
