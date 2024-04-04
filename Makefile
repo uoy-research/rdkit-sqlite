@@ -1,17 +1,21 @@
-RDKIT=lib/rdkit
+RDKIT=rdkit
+DB=data.db
 
 SHELL=/bin/sh
 CC=gcc
 OBJ=src/main.c
-CFLAGS=-g -fPIC -shared -I lib -I $(RDKIT) -lrdkitcffi -Llib
+CFLAGS=-g -fPIC -shared -I lib -I $(RDKIT)/Code -lrdkitcffi -Llib
 OUTPUT=librdkitsqlite
-DB=data.db
 
-librdkitsqlite: $(OBJ)
+librdkitsqlite: $(OBJ) rdkit
 	$(CC) $(OBJ) -o build/$(OUTPUT).so $(CFLAGS)
 
 all: $(OUTPUT) db
 .PHONY: all
+
+rdkit:
+	git clone https://github.com/rdkit/rdkit.git $(RDKIT)
+	mkdir $(RDKIT)/build && cd $(RDKIT)/build && cmake ..
 
 db:
 	rm $(DB)

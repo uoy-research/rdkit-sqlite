@@ -1,4 +1,5 @@
 build/
+rdkit/
 .ccls-cache
 *.db
 *.zip
