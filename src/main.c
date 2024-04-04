@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "librdkitcffi.h"
+#include "cffiwrapper.h"
 #include "sqlite3ext.h" /* Do not use <sqlite3.h>! */
 SQLITE_EXTENSION_INIT1
 
