@@ -1,9 +1,9 @@
-RDBASE=rdkit/rdkit
+RDKIT=lib/rdkit
 
 SHELL=/bin/sh
 CC=gcc
 OBJ=src/main.c
-CFLAGS=-g -fPIC -shared -I lib -I $(RDBASE)/Code -lrdkitcffi -Llib
+CFLAGS=-g -fPIC -shared -I lib -I $(RDKIT) -lrdkitcffi -Llib
 OUTPUT=librdkitsqlite
 DB=data.db
 
