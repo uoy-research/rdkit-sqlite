@@ -7,11 +7,11 @@ CFLAGS=-g -fPIC -shared -I lib -I $(RDKIT) -lrdkitcffi -Llib
 OUTPUT=librdkitsqlite
 DB=data.db
 
-all: $(OUTPUT) db
-.PHONY: all
-
 librdkitsqlite: $(OBJ)
 	$(CC) $(OBJ) -o build/$(OUTPUT).so $(CFLAGS)
+
+all: $(OUTPUT) db
+.PHONY: all
 
 db:
 	rm $(DB)
