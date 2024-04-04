@@ -4,7 +4,7 @@ DB=data.db
 SHELL=/bin/sh
 CC=gcc
 OBJ=src/main.c
-CFLAGS=-g -fPIC -shared -I lib -I $(RDKIT)/Code -lrdkitcffi -Llib
+CFLAGS=-g -fPIC -shared -I lib -I $(RDKIT)/Code
 OUTPUT=librdkitsqlite
 
 librdkitsqlite: $(OBJ) rdkit
@@ -15,7 +15,7 @@ all: $(OUTPUT) db
 
 rdkit:
 	git clone https://github.com/rdkit/rdkit.git $(RDKIT)
-	mkdir $(RDKIT)/build && cd $(RDKIT)/build && cmake ..
+	mkdir $(RDKIT)/build && cd $(RDKIT)/build && cmake -DRDK_BUILD_PYTHON_WRAPPERS=OFF ..
 
 db:
 	rm $(DB)
