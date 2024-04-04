@@ -14,14 +14,16 @@ librdkitsqlite: $(OBJ)
 	$(CC) $(OBJ) -o build/$(OUTPUT).so $(CFLAGS)
 
 db:
+	rm $(DB)
 	sqlite3 $(DB) < util/init.sql
 
 run: build/$(OUTPUT).so
 	LD_LIBRARY_PATH=$(PWD)/lib:$(LD_LIBRARY_PATH) sqlite3 $(DB) < util/queries.sql
 
-test:
+test: db
 	LD_LIBRARY_PATH=$(PWD)/lib:$(LD_LIBRARY_PATH) sqlite3 $(DB) < util/queries.sql > .output.txt
 	diff .output.txt util/correct.txt && echo "\nPASSED" || echo "\nFAILED"
 
 clean:
+	rm $(DB)
 	rm build/$(OUTPUT).so
