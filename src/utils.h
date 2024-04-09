@@ -1,0 +1,1 @@
+char *canon_smiles(char *mol_string);

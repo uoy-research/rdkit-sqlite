@@ -5,27 +5,16 @@
 #include "sqlite3ext.h" /* Do not use <sqlite3.h>! */
 SQLITE_EXTENSION_INIT1
 
-static char *canon_smiles(){
-  char *pkl;
-  size_t pkl_size;
-  
-  pkl = get_mol("c1cc(O)ccc1",&pkl_size,"");
-  char *smiles=get_smiles(pkl,pkl_size,NULL);
-  // canon_smiles()
-  printf("Canonical SMILES: %s\n",smiles);
-  free(pkl);
-
-  return smiles;
-}
+#include "utils.h"
 
 static void mol_search_func(
   sqlite3_context *context,
   int argc,
   sqlite3_value **argv
 ){
-  //sqlite3_result_text(context, (char*)zOut, i, SQLITE_TRANSIENT);
-  //sqlite3_result_text(context, canon_smiles(), i, SQLITE_TRANSIENT);
-  sqlite3_result_double(context, strlen(canon_smiles()));
+  char *mol_string = (char *)sqlite3_value_text(argv[0]);
+  char *out = canon_smiles(mol_string);
+  sqlite3_result_text(context, out, strlen(out), SQLITE_TRANSIENT);
 }
 
 int sqlite3_rdkitsqlite_init(
