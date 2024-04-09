@@ -1,101 +1,55 @@
+LD_LIBRARY_PATH=/home/mc2372/Code/rdkit-sqlite/lib: sqlite3 data.db < util/queries.sql
 hello 2024.09.1pre
-Canonical SMILES: Oc1ccccc1
-CCCC(=CC(=O)COO)C(=O)CO|9.0
-Canonical SMILES: Oc1ccccc1
-OOCC=O|9.0
-Canonical SMILES: Oc1ccccc1
-CCC(O)CCC(C)O|9.0
-Canonical SMILES: Oc1ccccc1
-CCCCCCCCCC(=O)CC|9.0
-Canonical SMILES: Oc1ccccc1
-CCc1cc(C)cc(c1)C(C)[O]|9.0
-Canonical SMILES: Oc1ccccc1
-[O]OC1(O)C=C(C)C2OOC1(CC)C2O|9.0
-Canonical SMILES: Oc1ccccc1
-CCCC(=O)OC=O|9.0
-Canonical SMILES: Oc1ccccc1
-OOC1CC2CC(C1=O)C2(C)C|9.0
-Canonical SMILES: Oc1ccccc1
-CCC(OO)C(C)O|9.0
-Canonical SMILES: Oc1ccccc1
-COC(C)(C)CON(=O)=O|9.0
-Canonical SMILES: Oc1ccccc1
-O=CC(=O)C=C(C(=O)CO)CC|9.0
-Canonical SMILES: Oc1ccccc1
-CC([O])Cl|9.0
-Canonical SMILES: Oc1ccccc1
-CCCC(=O)C(O)C(O)C=O|9.0
-Canonical SMILES: Oc1ccccc1
-O=CC1(O)CCC2CC1C2(C)C|9.0
-Canonical SMILES: Oc1ccccc1
-CCC12OOC(CC)(C=C(C)C2(O)O[O])C1O|9.0
-Canonical SMILES: Oc1ccccc1
-CC([O])(CO)C(CCC(=O)C)C=O|9.0
-Canonical SMILES: Oc1ccccc1
-Cc1ccc(C)c(O)c1|9.0
-Canonical SMILES: Oc1ccccc1
-OCC(C=O)C(C)(O[O])CO[N+](=O)[O-]|9.0
-Canonical SMILES: Oc1ccccc1
-[O]OC(=O)C(C)(C)C=O|9.0
-Canonical SMILES: Oc1ccccc1
-CCC(=O)C=C(C)C([O])C(=O)CC|9.0
-Canonical SMILES: Oc1ccccc1
-O=CCC([O])C(=O)C1CC(C)(C)C1CCC(=O)C|9.0
-Canonical SMILES: Oc1ccccc1
-CCc1cc(C)cc(N(=O)=O)c1O|9.0
-Canonical SMILES: Oc1ccccc1
-O=CCC(CO)C(C)([O])CO[N+](=O)[O-]|9.0
-Canonical SMILES: Oc1ccccc1
-CC(O)CCC(=O)C|9.0
-Canonical SMILES: Oc1ccccc1
-O=CC1(CCC2CC1C2(C)C)ON(=O)=O|9.0
-Canonical SMILES: Oc1ccccc1
-OC(Cl)C(C)Cl|9.0
-Canonical SMILES: Oc1ccccc1
-O=C1OC(=O)C(O)(C(C)C)C1O|9.0
-Canonical SMILES: Oc1ccccc1
-OOC(CC(=O)CC)C(C)O|9.0
-Canonical SMILES: Oc1ccccc1
-CC(O)COC(=O)C|9.0
-Canonical SMILES: Oc1ccccc1
-OOC(C)(C)C(=O)C|9.0
-Canonical SMILES: Oc1ccccc1
-CC(=O)CCC(CO[N+](=O)[O-])C(=O)C|9.0
-Canonical SMILES: Oc1ccccc1
-CCC1(OO)C(O)C(=O)OC1=O|9.0
-Canonical SMILES: Oc1ccccc1
-*-O[O]|9.0
-Canonical SMILES: Oc1ccccc1
-O=CCC1C(CC1(C)C)C(=O)CCC(=O)O|9.0
-Canonical SMILES: Oc1ccccc1
-OC(=O)CCC(CO[N+](=O)[O-])C(=C)C|9.0
-Canonical SMILES: Oc1ccccc1
-OOCC(=O)c1ccccc1C|9.0
-Canonical SMILES: Oc1ccccc1
-O=CC=C(C)C(=O)[O]|9.0
-Canonical SMILES: Oc1ccccc1
-CC(C)c1cccc(N(=O)=O)c1[O]|9.0
-Canonical SMILES: Oc1ccccc1
-Cc1ccccc1|9.0
-Canonical SMILES: Oc1ccccc1
-OOCc1cccc(C)c1|9.0
-Canonical SMILES: Oc1ccccc1
-*-O[O]|9.0
-Canonical SMILES: Oc1ccccc1
-CCC1=CC(=O)C(ON(=O)=O)C(C)([O])C1=O|9.0
-Canonical SMILES: Oc1ccccc1
-O=CC(C)(ON(=O)=O)C(=O)O|9.0
-Canonical SMILES: Oc1ccccc1
-OOCC(CO)C(=C)C|9.0
-Canonical SMILES: Oc1ccccc1
-O=CCC(CCC(=O)C)C(C)([O])CO|9.0
-Canonical SMILES: Oc1ccccc1
-CC(=O)C(=O)COO|9.0
-Canonical SMILES: Oc1ccccc1
-CCCc1cccc(N(=O)=O)c1OO|9.0
-Canonical SMILES: Oc1ccccc1
-O=CC(O)C([O])C1OC1C=O|9.0
-Canonical SMILES: Oc1ccccc1
-OOC1(C)C=CC2(C)OOC1(C)C2O|9.0
-Canonical SMILES: Oc1ccccc1
-OCCCC(=O)OO|9.0
+Smiles                               mol(SMILES)                             
+-----------------------------------  ----------------------------------------
+CCCC(=CC(=O)COO)C(=O)CO              CCCC(=CC(=O)COO)C(=O)CO                 
+OOCC=O                               O=CCOO                                  
+CCC(O)CCC(C)O                        CCC(O)CCC(C)O                           
+CCCCCCCCCC(=O)CC                     CCCCCCCCCC(=O)CC                        
+CCc1cc(C)cc(c1)C(C)[O]               CCc1cc(C)cc(C(C)[O])c1                  
+[O]OC1(O)C=C(C)C2OOC1(CC)C2O         CCC12OOC(C(C)=CC1(O)O[O])C2O            
+CCCC(=O)OC=O                         CCCC(=O)OC=O                            
+OOC1CC2CC(C1=O)C2(C)C                CC1(C)C2CC(OO)C(=O)C1C2                 
+CCC(OO)C(C)O                         CCC(OO)C(C)O                            
+COC(C)(C)CON(=O)=O                   COC(C)(C)CO[N+](=O)[O-]                 
+O=CC(=O)C=C(C(=O)CO)CC               CCC(=CC(=O)C=O)C(=O)CO                  
+CC([O])Cl                            CC([O])Cl                               
+CCCC(=O)C(O)C(O)C=O                  CCCC(=O)C(O)C(O)C=O                     
+O=CC1(O)CCC2CC1C2(C)C                CC1(C)C2CCC(O)(C=O)C1C2                 
+CCC12OOC(CC)(C=C(C)C2(O)O[O])C1O     CCC12C=C(C)C(O)(O[O])C(CC)(OO1)C2O      
+CC([O])(CO)C(CCC(=O)C)C=O            CC(=O)CCC(C=O)C(C)([O])CO               
+Cc1ccc(C)c(O)c1                      Cc1ccc(C)c(O)c1                         
+OCC(C=O)C(C)(O[O])CO[N+](=O)[O-]     CC(CO[N+](=O)[O-])(O[O])C(C=O)CO        
+[O]OC(=O)C(C)(C)C=O                  CC(C)(C=O)C(=O)O[O]                     
+CCC(=O)C=C(C)C([O])C(=O)CC           CCC(=O)C=C(C)C([O])C(=O)CC              
+O=CCC([O])C(=O)C1CC(C)(C)C1CCC(=O)C  CC(=O)CCC1C(C(=O)C([O])CC=O)CC1(C)C     
+CCc1cc(C)cc(N(=O)=O)c1O              CCc1cc(C)cc([N+](=O)[O-])c1O            
+O=CCC(CO)C(C)([O])CO[N+](=O)[O-]     CC([O])(CO[N+](=O)[O-])C(CO)CC=O        
+CC(O)CCC(=O)C                        CC(=O)CCC(C)O                           
+O=CC1(CCC2CC1C2(C)C)ON(=O)=O         CC1(C)C2CCC(C=O)(O[N+](=O)[O-])C1C2     
+OC(Cl)C(C)Cl                         CC(Cl)C(O)Cl                            
+O=C1OC(=O)C(O)(C(C)C)C1O             CC(C)C1(O)C(=O)OC(=O)C1O                
+OOC(CC(=O)CC)C(C)O                   CCC(=O)CC(OO)C(C)O                      
+CC(O)COC(=O)C                        CC(=O)OCC(C)O                           
+OOC(C)(C)C(=O)C                      CC(=O)C(C)(C)OO                         
+CC(=O)CCC(CO[N+](=O)[O-])C(=O)C      CC(=O)CCC(CO[N+](=O)[O-])C(C)=O         
+CCC1(OO)C(O)C(=O)OC1=O               CCC1(OO)C(=O)OC(=O)C1O                  
+*-O[O]                               *O[O]                                   
+O=CCC1C(CC1(C)C)C(=O)CCC(=O)O        CC1(C)CC(C(=O)CCC(=O)O)C1CC=O           
+OC(=O)CCC(CO[N+](=O)[O-])C(=C)C      C=C(C)C(CCC(=O)O)CO[N+](=O)[O-]         
+OOCC(=O)c1ccccc1C                    Cc1ccccc1C(=O)COO                       
+O=CC=C(C)C(=O)[O]                    CC(=CC=O)C([O])=O                       
+CC(C)c1cccc(N(=O)=O)c1[O]            CC(C)c1cccc([N+](=O)[O-])c1[O]          
+Cc1ccccc1                            Cc1ccccc1                               
+OOCc1cccc(C)c1                       Cc1cccc(COO)c1                          
+*-O[O]                               *O[O]                                   
+CCC1=CC(=O)C(ON(=O)=O)C(C)([O])C1=O  CCC1=CC(=O)C(O[N+](=O)[O-])C(C)([O])C1=O
+O=CC(C)(ON(=O)=O)C(=O)O              CC(C=O)(O[N+](=O)[O-])C(=O)O            
+OOCC(CO)C(=C)C                       C=C(C)C(CO)COO                          
+O=CCC(CCC(=O)C)C(C)([O])CO           CC(=O)CCC(CC=O)C(C)([O])CO              
+CC(=O)C(=O)COO                       CC(=O)C(=O)COO                          
+CCCc1cccc(N(=O)=O)c1OO               CCCc1cccc([N+](=O)[O-])c1OO             
+O=CC(O)C([O])C1OC1C=O                [O]C(C(O)C=O)C1OC1C=O                   
+OOC1(C)C=CC2(C)OOC1(C)C2O            CC12C=CC(C)(OO)C(C)(OO1)C2O             
+OCCCC(=O)OO                          O=C(CCCO)OO                             
+Run Time: real 0.007 user 0.006899 sys 0.000000

@@ -1,4 +1,4 @@
-#include "librdkitcffi.h"
+#include "cffiwrapper.h"
 
 char *canon_smiles(char *mol_string){
   char *pkl;

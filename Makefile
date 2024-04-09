@@ -3,7 +3,7 @@ DB=data.db
 
 SHELL=/bin/sh
 CC=gcc
-OBJ=src/main.c
+OBJ=src/main.c src/utils.c
 CFLAGS=-g -fPIC -shared -I $(RDKIT)/Code -I $(RDKIT)/Code/MinimalLib -lrdkitcffi -Llib
 OUTPUT=librdkitsqlite
 
