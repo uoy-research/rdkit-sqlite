@@ -1,0 +1,101 @@
+hello 2024.09.1pre
+Canonical SMILES: Oc1ccccc1
+CCCC(=CC(=O)COO)C(=O)CO|9.0
+Canonical SMILES: Oc1ccccc1
+OOCC=O|9.0
+Canonical SMILES: Oc1ccccc1
+CCC(O)CCC(C)O|9.0
+Canonical SMILES: Oc1ccccc1
+CCCCCCCCCC(=O)CC|9.0
+Canonical SMILES: Oc1ccccc1
+CCc1cc(C)cc(c1)C(C)[O]|9.0
+Canonical SMILES: Oc1ccccc1
+[O]OC1(O)C=C(C)C2OOC1(CC)C2O|9.0
+Canonical SMILES: Oc1ccccc1
+CCCC(=O)OC=O|9.0
+Canonical SMILES: Oc1ccccc1
+OOC1CC2CC(C1=O)C2(C)C|9.0
+Canonical SMILES: Oc1ccccc1
+CCC(OO)C(C)O|9.0
+Canonical SMILES: Oc1ccccc1
+COC(C)(C)CON(=O)=O|9.0
+Canonical SMILES: Oc1ccccc1
+O=CC(=O)C=C(C(=O)CO)CC|9.0
+Canonical SMILES: Oc1ccccc1
+CC([O])Cl|9.0
+Canonical SMILES: Oc1ccccc1
+CCCC(=O)C(O)C(O)C=O|9.0
+Canonical SMILES: Oc1ccccc1
+O=CC1(O)CCC2CC1C2(C)C|9.0
+Canonical SMILES: Oc1ccccc1
+CCC12OOC(CC)(C=C(C)C2(O)O[O])C1O|9.0
+Canonical SMILES: Oc1ccccc1
+CC([O])(CO)C(CCC(=O)C)C=O|9.0
+Canonical SMILES: Oc1ccccc1
+Cc1ccc(C)c(O)c1|9.0
+Canonical SMILES: Oc1ccccc1
+OCC(C=O)C(C)(O[O])CO[N+](=O)[O-]|9.0
+Canonical SMILES: Oc1ccccc1
+[O]OC(=O)C(C)(C)C=O|9.0
+Canonical SMILES: Oc1ccccc1
+CCC(=O)C=C(C)C([O])C(=O)CC|9.0
+Canonical SMILES: Oc1ccccc1
+O=CCC([O])C(=O)C1CC(C)(C)C1CCC(=O)C|9.0
+Canonical SMILES: Oc1ccccc1
+CCc1cc(C)cc(N(=O)=O)c1O|9.0
+Canonical SMILES: Oc1ccccc1
+O=CCC(CO)C(C)([O])CO[N+](=O)[O-]|9.0
+Canonical SMILES: Oc1ccccc1
+CC(O)CCC(=O)C|9.0
+Canonical SMILES: Oc1ccccc1
+O=CC1(CCC2CC1C2(C)C)ON(=O)=O|9.0
+Canonical SMILES: Oc1ccccc1
+OC(Cl)C(C)Cl|9.0
+Canonical SMILES: Oc1ccccc1
+O=C1OC(=O)C(O)(C(C)C)C1O|9.0
+Canonical SMILES: Oc1ccccc1
+OOC(CC(=O)CC)C(C)O|9.0
+Canonical SMILES: Oc1ccccc1
+CC(O)COC(=O)C|9.0
+Canonical SMILES: Oc1ccccc1
+OOC(C)(C)C(=O)C|9.0
+Canonical SMILES: Oc1ccccc1
+CC(=O)CCC(CO[N+](=O)[O-])C(=O)C|9.0
+Canonical SMILES: Oc1ccccc1
+CCC1(OO)C(O)C(=O)OC1=O|9.0
+Canonical SMILES: Oc1ccccc1
+*-O[O]|9.0
+Canonical SMILES: Oc1ccccc1
+O=CCC1C(CC1(C)C)C(=O)CCC(=O)O|9.0
+Canonical SMILES: Oc1ccccc1
+OC(=O)CCC(CO[N+](=O)[O-])C(=C)C|9.0
+Canonical SMILES: Oc1ccccc1
+OOCC(=O)c1ccccc1C|9.0
+Canonical SMILES: Oc1ccccc1
+O=CC=C(C)C(=O)[O]|9.0
+Canonical SMILES: Oc1ccccc1
+CC(C)c1cccc(N(=O)=O)c1[O]|9.0
+Canonical SMILES: Oc1ccccc1
+Cc1ccccc1|9.0
+Canonical SMILES: Oc1ccccc1
+OOCc1cccc(C)c1|9.0
+Canonical SMILES: Oc1ccccc1
+*-O[O]|9.0
+Canonical SMILES: Oc1ccccc1
+CCC1=CC(=O)C(ON(=O)=O)C(C)([O])C1=O|9.0
+Canonical SMILES: Oc1ccccc1
+O=CC(C)(ON(=O)=O)C(=O)O|9.0
+Canonical SMILES: Oc1ccccc1
+OOCC(CO)C(=C)C|9.0
+Canonical SMILES: Oc1ccccc1
+O=CCC(CCC(=O)C)C(C)([O])CO|9.0
+Canonical SMILES: Oc1ccccc1
+CC(=O)C(=O)COO|9.0
+Canonical SMILES: Oc1ccccc1
+CCCc1cccc(N(=O)=O)c1OO|9.0
+Canonical SMILES: Oc1ccccc1
+O=CC(O)C([O])C1OC1C=O|9.0
+Canonical SMILES: Oc1ccccc1
+OOC1(C)C=CC2(C)OOC1(C)C2O|9.0
+Canonical SMILES: Oc1ccccc1
+OCCCC(=O)OO|9.0
