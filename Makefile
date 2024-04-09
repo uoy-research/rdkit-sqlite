@@ -3,12 +3,12 @@ DB=data.db
 
 SHELL=/bin/sh
 CC=gcc
-OBJ=src/main.c src/utils.c
+SRC=src/main.c src/utils.c
 CFLAGS=-g -fPIC -shared -I $(RDKIT)/Code -I $(RDKIT)/Code/MinimalLib -lrdkitcffi -Llib
 OUTPUT=librdkitsqlite
 
-librdkitsqlite: $(OBJ)
-	$(CC) $(OBJ) -o build/$(OUTPUT).so $(CFLAGS)
+librdkitsqlite: $(SRC)
+	$(CC) $(SRC) -o build/$(OUTPUT).so $(CFLAGS)
 
 all: $(OUTPUT) db
 .PHONY: all
