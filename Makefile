@@ -11,7 +11,7 @@ librdkitsqlite: $(SRC)
 	$(CC) $(SRC) -o build/$(OUTPUT).so $(CFLAGS)
 
 all: $(OUTPUT) db
-.PHONY: all
+.PHONY: all clean
 
 db:
 	rm $(DB)
