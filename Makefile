@@ -7,11 +7,11 @@ SRC=src/main.c src/utils.c
 CFLAGS=-g -fPIC -shared -I $(RDKIT)/Code -I $(RDKIT)/Code/MinimalLib -lrdkitcffi -Llib
 OUTPUT=librdkitsqlite
 
-librdkitsqlite: $(SRC)
-	$(CC) $(SRC) -o build/$(OUTPUT).so $(CFLAGS)
-
 all: $(OUTPUT) db
 .PHONY: all clean
+
+librdkitsqlite: $(SRC)
+	$(CC) $(SRC) -o build/$(OUTPUT).so $(CFLAGS)
 
 db:
 	rm $(DB)
