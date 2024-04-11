@@ -4,14 +4,15 @@ DB=data.db
 SHELL=/bin/sh
 CC=gcc
 SRC=src/main.c src/utils.c
-CFLAGS=-g -fPIC -shared -I $(RDKIT)/Code -I $(RDKIT)/Code/MinimalLib -lrdkitcffi -Llib
+CFLAGS=-g -fPIC -shared
+LDFLAGS=-I $(RDKIT)/Code -I $(RDKIT)/Code/MinimalLib -lrdkitcffi -Llib
 OUTPUT=librdkitsqlite
 
 all: $(OUTPUT) db
 .PHONY: all clean
 
 librdkitsqlite: $(SRC)
-	$(CC) $(SRC) -o build/$(OUTPUT).so $(CFLAGS)
+	$(CC) $(CFLAGS) $(SRC) -o build/$(OUTPUT).so $(LDFLAGS)
 
 db:
 	rm $(DB)
