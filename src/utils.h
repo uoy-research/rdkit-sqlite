@@ -1,1 +1,1 @@
-char *canon_smiles(char *mol_string);
+int canon_smiles(char *mol_string);

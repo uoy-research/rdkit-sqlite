@@ -13,8 +13,14 @@ static void mol_search_func(
   sqlite3_value **argv
 ){
   char *mol_string = (char *)sqlite3_value_text(argv[0]);
-  char *out = canon_smiles(mol_string);
-  sqlite3_result_text(context, out, strlen(out), SQLITE_TRANSIENT);
+
+  int err = canon_smiles(mol_string);
+  if (err != 0) {
+    sqlite3_result_error(context, "SMILES parse error", -1);
+    return;
+  }
+
+  sqlite3_result_text(context, mol_string, strlen(mol_string), SQLITE_TRANSIENT);
 }
 
 int sqlite3_rdkitsqlite_init(
@@ -31,6 +37,11 @@ int sqlite3_rdkitsqlite_init(
   rc = sqlite3_create_function(db, "mol", 1,
                    SQLITE_UTF8|SQLITE_INNOCUOUS|SQLITE_DETERMINISTIC,
                    0, mol_search_func, 0, 0);
+
+  if (rc != SQLITE_OK) {
+    fprintf(stderr, "Error: %s\n", sqlite3_errmsg(db));
+    return 1;
+  }
 
   return rc;
 }
