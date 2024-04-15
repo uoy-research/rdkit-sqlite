@@ -5,6 +5,8 @@ int canon_smiles(char *mol_string){
   size_t pkl_size;
   
   pkl = get_mol(mol_string, &pkl_size,"");
+  if (pkl == NULL) { return 1; }
+
   mol_string = get_smiles(pkl,pkl_size,NULL);
   free(pkl);
 
