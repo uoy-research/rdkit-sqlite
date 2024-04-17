@@ -23,15 +23,14 @@ rdkit:
 	mkdir -p lib && cp $(RDKIT)/build/lib/* lib/
 
 db:
-	rm $(DB)
-	sqlite3 $(DB) < util/init.sql
+	rm -f $(DB)
+	touch $(DB)
 
 run: build/$(OUTPUT).so
 	LD_LIBRARY_PATH=$(PWD)/lib:$(LD_LIBRARY_PATH) sqlite3 $(DB) < util/queries.sql
 
 test: db
-	LD_LIBRARY_PATH=$(PWD)/lib:$(LD_LIBRARY_PATH) sqlite3 $(DB) < util/queries.sql > .output.txt
-	diff .output.txt util/correct.txt && echo "\nPASSED" || echo "\nFAILED"
+	LD_LIBRARY_PATH=$(PWD)/lib:$(LD_LIBRARY_PATH) util/test.sh $(DB) tests
 
 clean:
 	rm $(DB)

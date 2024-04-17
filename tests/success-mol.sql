@@ -1,9 +1,11 @@
-CREATE TABLE IF NOT EXISTS Species (
+.load build/librdkitsqlite
+
+CREATE TABLE SuccessMol (
     Name TEXT PRIMARY KEY,
     Smiles TEXT
 );
 
-INSERT INTO Species(Name, Smiles)
+INSERT INTO SuccessMol(Name, Smiles)
     VALUES ('PPRBQOOH', 'CCCC(=CC(=O)COO)C(=O)CO'),
     ('HCOCH2OOH', 'OOCC=O'),
     ('HO25C7', 'CCC(O)CCC(C)O'),
@@ -54,3 +56,5 @@ INSERT INTO Species(Name, Smiles)
     ('BZEMUCO', 'O=CC(O)C([O])C1OC1C=O'),
     ('TM124BPOOH', 'OOC1(C)C=CC2(C)OOC1(C)C2O'),
     ('HOC3H6CO3H', 'OCCCC(=O)OO');
+
+SELECT mol(SMILES) FROM SuccessMol;
