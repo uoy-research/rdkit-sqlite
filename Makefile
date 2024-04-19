@@ -30,8 +30,8 @@ run: build/$(OUTPUT).so
 	LD_LIBRARY_PATH=$(PWD)/lib:$(LD_LIBRARY_PATH) sqlite3 $(DB) < util/queries.sql
 
 test: db
-	LD_LIBRARY_PATH=$(PWD)/lib:$(LD_LIBRARY_PATH) util/test.sh $(DB) tests
+	LD_LIBRARY_PATH=$(PWD)/lib:$(LD_LIBRARY_PATH) util/test.sh $(DB) tests/
 
 clean:
-	rm $(DB)
+	rm -f $(DB)
 	rm build/$(OUTPUT).so

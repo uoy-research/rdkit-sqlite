@@ -17,15 +17,17 @@ fail () {
     echo 'FAILED'
 }
 
-for testcase in "$testdir"/*.sql ; do
+for testcase in "$(basename $testdir)"/*.sql ; do
     echo "$testcase"
 
     case $(basename "$testcase" | cut -d'-' -f1) in
         success)
-            sqlite3 data.db < "$testcase" && pass || fail
+            output="$(sqlite3 "$db" < "$testcase")"
+            echo "$output"
+            [ "$(echo "$output" | tail -n1)" = 'status: 0' ] && pass || fail
             ;;
         fail)
-            sqlite3 data.db < "$testcase" && fail || pass
+            sqlite3 "$db" < "$testcase" && fail || pass
             ;;
         esac
     
