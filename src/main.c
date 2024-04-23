@@ -17,6 +17,7 @@ static void mol_search_func(
   int err = canon_smiles(mol_string);
   if (err != 0) {
     sqlite3_result_error(context, "SMILES parse error", -1);
+    sqlite3_result_null(context);
     return;
   }
 
