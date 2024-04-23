@@ -1,7 +1,6 @@
 #!/bin/sh
 
-db=$1
-testdir=$2
+testdir=$1
 
 # tally variables
 successes=0
@@ -22,12 +21,12 @@ for testcase in "$(basename $testdir)"/*.sql ; do
 
     case $(basename "$testcase" | cut -d'-' -f1) in
         success)
-            output="$(sqlite3 "$db" < "$testcase")"
+            output="$(sqlite3 < "$testcase")"
             echo "$output"
             [ "$(echo "$output" | tail -n1)" = 'status: 0' ] && pass || fail
             ;;
         fail)
-            sqlite3 "$db" < "$testcase" && fail || pass
+            sqlite3 < "$testcase" && fail || pass
             ;;
         esac
     

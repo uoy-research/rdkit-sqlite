@@ -1,5 +1,4 @@
 RDKIT=rdkit
-DB=data.db
 
 SHELL=/bin/sh
 CC=gcc
@@ -10,7 +9,7 @@ OUTPUT=librdkitsqlite
 librdkitsqlite: $(OBJ) rdkit
 	$(CC) $(OBJ) -o build/$(OUTPUT).so $(CFLAGS)
 
-all: $(OUTPUT) db
+all: $(OUTPUT)
 .PHONY: all
 
 rdkit:
@@ -22,16 +21,8 @@ rdkit:
 	Code/MinimalLib/cffi_test
 	mkdir -p lib && cp $(RDKIT)/build/lib/* lib/
 
-db:
-	rm -f $(DB)
-	touch $(DB)
-
-run: build/$(OUTPUT).so
-	LD_LIBRARY_PATH=$(PWD)/lib:$(LD_LIBRARY_PATH) sqlite3 $(DB) < util/queries.sql
-
-test: db
-	LD_LIBRARY_PATH=$(PWD)/lib:$(LD_LIBRARY_PATH) util/test.sh $(DB) tests/
+test:
+	LD_LIBRARY_PATH=$(PWD)/lib:$(LD_LIBRARY_PATH) util/test.sh tests/
 
 clean:
-	rm -f $(DB)
 	rm build/$(OUTPUT).so
