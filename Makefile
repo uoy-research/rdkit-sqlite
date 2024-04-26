@@ -11,6 +11,7 @@ all: $(OUTPUT)
 .PHONY: all clean
 
 librdkitsqlite: $(SRC)
+	mkdir -p build
 	$(CC) $(CFLAGS) $(SRC) -o build/$(OUTPUT).so $(LDFLAGS)
 
 test:
