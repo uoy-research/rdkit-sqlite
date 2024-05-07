@@ -36,13 +36,14 @@ static void mol_substruct_func(
   printf("%s\n", smiles);
   printf("%s\n", smarts);
 
-  int err = substruct_match(smiles, smarts, match);
+  int err = substruct_match(smiles, smarts, &match);
   if (err != 0) {
     sqlite3_result_error(context, "Unknown error", -1);
     sqlite3_result_null(context);
     return;
   }
 
+  printf("%s\n", match);
   sqlite3_result_text(context, match, strlen(match), SQLITE_TRANSIENT);
 }
 
@@ -57,21 +58,16 @@ int sqlite3_rdkitsqlite_init(
   enable_logging();
   printf("hello %s\n",version()); 
 
-  rc = sqlite3_create_function(db, "mol", 1,
+  sqlite3_create_function(db, "mol", 1,
                    SQLITE_UTF8|SQLITE_INNOCUOUS|SQLITE_DETERMINISTIC,
                    0, mol_search_func, 0, 0);
-  if (rc != SQLITE_OK) {
-    fprintf(stderr, "Error: %s\n", sqlite3_errmsg(db));
-    return rc;
-  }
 
-  rc = sqlite3_create_function(db, "substruct_match", 2,
+  sqlite3_create_function(db, "substruct_match", 2,
                    SQLITE_UTF8|SQLITE_INNOCUOUS|SQLITE_DETERMINISTIC,
                    0, mol_substruct_func, 0, 0);
+
   if (rc != SQLITE_OK) {
     fprintf(stderr, "Error: %s\n", sqlite3_errmsg(db));
-    return rc;
   }
-
   return rc;
 }

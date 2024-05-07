@@ -17,15 +17,14 @@ int canon_smiles(char *smiles) {
   return 0;
 }
 
-int substruct_match(char *smiles, char *smarts, char *match) {
-
+int substruct_match(char *smiles, char *smarts, char **match) {
   char *pkl;
   size_t pkl_size;
   
   pkl = get_mol(smiles, &pkl_size, NULL);
   if (pkl == NULL) { return 1; }
 
-  match = get_smiles(pkl, pkl_size, NULL);
+  *match = get_smiles(pkl, pkl_size, NULL);
   free(pkl);
 
   return 0;
