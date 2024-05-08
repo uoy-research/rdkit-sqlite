@@ -31,10 +31,7 @@ static void mol_substruct_func(
 ){
   char *smiles = (char *)sqlite3_value_text(argv[0]);
   char *smarts = (char *)sqlite3_value_text(argv[1]);
-  char *match;
-
-  printf("%s\n", smiles);
-  printf("%s\n", smarts);
+  int match;
 
   int err = substruct_match(smiles, smarts, &match);
   if (err != 0) {
@@ -43,8 +40,7 @@ static void mol_substruct_func(
     return;
   }
 
-  printf("%s\n", match);
-  sqlite3_result_text(context, match, strlen(match), SQLITE_TRANSIENT);
+  sqlite3_result_int(context, match);
 }
 
 int sqlite3_rdkitsqlite_init(
