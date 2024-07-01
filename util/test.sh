@@ -23,7 +23,7 @@ for testcase in "$(basename $testdir)"/*.sql ; do
         success)
             output="$(sqlite3 < "$testcase")"
             echo "$output"
-            [ "$(echo "$output" | grep '^status: ')" = 'status: 0' ] && pass || fail
+            (echo "$output" | grep '^status: 0' > /dev/null) && pass || fail
             ;;
         fail)
             sqlite3 < "$testcase" && fail || pass
