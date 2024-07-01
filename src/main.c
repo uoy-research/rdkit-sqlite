@@ -44,24 +44,6 @@ static void mol_substruct_func(
   sqlite3_result_int(context, match);
 }
 
-static void mol_json_func(
-  sqlite3_context *context,
-  int argc,
-  sqlite3_value **argv
-){
-  char *smiles = (char *)sqlite3_value_text(argv[0]);
-  char *result;
-
-  int err = json(smiles, &result);
-  if (err != 0) {
-    sqlite3_result_error(context, "SMILES parse error", -1);
-    sqlite3_result_null(context);
-    return;
-  }
-
-  sqlite3_result_text(context, result, strlen(result), SQLITE_TRANSIENT);
-}
-
 int sqlite3_rdkitsqlite_init(
   sqlite3 *db, 
   char **pzErrMsg, 
@@ -80,10 +62,6 @@ int sqlite3_rdkitsqlite_init(
   sqlite3_create_function(db, "substruct_match", 2,
                    SQLITE_UTF8|SQLITE_INNOCUOUS|SQLITE_DETERMINISTIC,
                    0, mol_substruct_func, 0, 0);
-
-  sqlite3_create_function(db, "json", 1,
-                   SQLITE_UTF8|SQLITE_INNOCUOUS|SQLITE_DETERMINISTIC,
-                   0, mol_json_func, 0, 0);
 
   if (rc != SQLITE_OK) {
     fprintf(stderr, "Error: %s\n", sqlite3_errmsg(db));
