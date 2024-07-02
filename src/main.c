@@ -44,6 +44,29 @@ static void mol_substruct_func(
   sqlite3_result_int(context, match);
 }
 
+static void mol_peroxy_func(
+  sqlite3_context *context,
+  int argc,
+  sqlite3_value **argv
+){
+  char *smiles = (char *)sqlite3_value_text(argv[0]);
+  char *valid_smarts[] = { "CO[O]", "[O]OC" };
+  int match = 0;
+  int match_tmp;
+
+  for (int i = 0; i < sizeof(valid_smarts)/sizeof(valid_smarts[0]); i++) {
+    int err = substruct_match(smiles, valid_smarts[i], &match_tmp);
+    if (err != 0) {
+      sqlite3_result_error(context, "Unknown error", -1);
+      sqlite3_result_null(context);
+      return;
+    }
+    match = match || match_tmp;
+  }
+
+  sqlite3_result_int(context, match);
+}
+
 int sqlite3_rdkitsqlite_init(
   sqlite3 *db, 
   char **pzErrMsg, 
@@ -62,6 +85,10 @@ int sqlite3_rdkitsqlite_init(
   sqlite3_create_function(db, "substruct_match", 2,
                    SQLITE_UTF8|SQLITE_INNOCUOUS|SQLITE_DETERMINISTIC,
                    0, mol_substruct_func, 0, 0);
+
+  sqlite3_create_function(db, "peroxy", 1,
+                   SQLITE_UTF8|SQLITE_INNOCUOUS|SQLITE_DETERMINISTIC,
+                   0, mol_peroxy_func, 0, 0);
 
   if (rc != SQLITE_OK) {
     fprintf(stderr, "Error: %s\n", sqlite3_errmsg(db));
