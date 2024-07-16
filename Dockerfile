@@ -19,4 +19,4 @@ RUN cp $ROOT/lib/* /lib
 RUN cp $ROOT/build/* /lib
 ENV LD_LIBRARY_PATH=$ROOT/lib
 
-CMD ["sqlite3", ":memory:", ".load /lib/librdkitsqlite"]
+CMD ["sqlite3", ":memory:", "-cmd", ".load /lib/librdkitsqlite"]
