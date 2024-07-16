@@ -12,6 +12,14 @@ The library can be loaded from SQLite as such:
 
 ## Building
 
+### Docker
+
+Run the following command:
+
+`$ docker build -t 'rdkitsqlite' .`
+
+### Manual
+
 Install the following dependencies:
 
 - [SQLite](https://www.sqlite.org/)
