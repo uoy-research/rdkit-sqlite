@@ -50,9 +50,7 @@ int sqlite3_rdkitsqlite_init(
 ){
   int rc = SQLITE_OK;
   SQLITE_EXTENSION_INIT2(pApi);
-
   enable_logging();
-  printf("hello %s\n",version()); 
 
   sqlite3_create_function(db, "mol", 1,
                    SQLITE_UTF8|SQLITE_INNOCUOUS|SQLITE_DETERMINISTIC,
