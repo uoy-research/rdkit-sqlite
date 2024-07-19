@@ -18,7 +18,6 @@ static void mol_substruct_func(
 
   int err = substruct_match(smiles, smarts, &match);
   if (err != 0) {
-    sqlite3_result_error(context, "Unknown error", -1);
     sqlite3_result_null(context);
     return;
   }
