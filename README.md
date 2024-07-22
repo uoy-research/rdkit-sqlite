@@ -45,7 +45,7 @@ $ make
 
 Running the image starts an interactive SQLite session with the library pre-loaded.
 
-`$ docker run -t 'rdkitsqlite'`
+`$ docker run -it 'rdkitsqlite'`
 
 Within in the SQLite session, the following code creates a dummy table with a single molecule and performs a substructure match on it:
 
