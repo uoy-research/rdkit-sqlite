@@ -52,7 +52,7 @@ Within in the SQLite session, the following code creates a dummy table with a si
 ```
 CREATE TABLE Species (
     Name TEXT PRIMARY KEY,
-    Smiles TEXT,
+    Smiles TEXT
 );
 
 INSERT INTO SuccessSubstruct(Name, Smiles)
