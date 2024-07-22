@@ -26,7 +26,7 @@ int substruct_match(char *smiles, char *smarts, int *match) {
   if (mol_pkl == NULL) { return 1; }
 
   qmol_pkl = get_qmol(smarts, &pkl_size, NULL);
-  if (mol_pkl == NULL) { return 2; }
+  if (qmol_pkl == NULL) { return 2; }
 
   char *matches = get_substruct_match(mol_pkl, pkl_size, qmol_pkl, pkl_size, NULL);
   if (matches == NULL) { return 3; }
