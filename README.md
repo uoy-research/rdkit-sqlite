@@ -55,10 +55,10 @@ CREATE TABLE Species (
     Smiles TEXT
 );
 
-INSERT INTO SuccessSubstruct(Name, Smiles)
-    VALUES ('PXYLOL', 'Cc1ccc(C)c(O)c1', 1);
+INSERT INTO Species(Name, Smiles)
+    VALUES ('PXYLOL', 'Cc1ccc(C)c(O)c1');
 
-SELECT Name, Smiles, substruct_match(Smiles, '0c1[c,n]cccc1');
+SELECT Name, Smiles, substruct_match(Smiles, 'Oc1[c,n]cccc1') FROM Species;
 ```
 
 The result should be a match.
