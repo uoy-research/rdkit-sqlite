@@ -12,6 +12,18 @@ The library can be loaded from SQLite as such:
 
 ## Building
 
+### Docker
+
+A Docker image has been provided to simplify integrating the library into larger projects. When run, an interactive SQLite session is started with the library pre-loaded for testing.
+
+A Docker image with the library pre-built is available on the GitHub Container Registry (soon) to speed up building and simplify integrating into larger projects. If you prefer, you can also build the Docker image yourself:
+
+Run the following command:
+
+`$ docker build -t 'rdkitsqlite' .`
+
+### Manual
+
 Install the following dependencies:
 
 - [SQLite](https://www.sqlite.org/)
@@ -26,6 +38,30 @@ This software can be compiled as such:
 ```bash
 $ make
 ```
+
+## Usage
+
+### Docker
+
+Running the image starts an interactive SQLite session with the library pre-loaded.
+
+`$ docker run -it 'rdkitsqlite'`
+
+Within in the SQLite session, the following code creates a dummy table with a single molecule and performs a substructure match on it:
+
+```
+CREATE TABLE Species (
+    Name TEXT PRIMARY KEY,
+    Smiles TEXT
+);
+
+INSERT INTO Species(Name, Smiles)
+    VALUES ('PXYLOL', 'Cc1ccc(C)c(O)c1');
+
+SELECT Name, Smiles, substruct_match(Smiles, 'Oc1[c,n]cccc1') FROM Species;
+```
+
+The result should be a match.
 
 ## Testing
 

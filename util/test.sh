@@ -20,16 +20,9 @@ for testcase in "$(basename $testdir)"/*.sql ; do
     echo "$testcase"
 
     case $(basename "$testcase" | cut -d'-' -f1) in
-        success)
-            output="$(sqlite3 < "$testcase")"
-            echo "$output"
-            (echo "$output" | grep '^status: 0' > /dev/null) && pass || fail
-            ;;
-        fail)
-            sqlite3 < "$testcase" && fail || pass
-            ;;
-        esac
-    
+        output="$(sqlite3 < "$testcase")"
+        echo "$output"
+        (echo "$output" | grep '^status: 0' > /dev/null) && pass || fail
     echo ''
 done
 
