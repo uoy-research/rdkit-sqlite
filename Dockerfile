@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM ubuntu:latest
 RUN apt-get update -qq && apt-get install -y build-essential libsqlite3-dev sqlite3 git cmake libboost-all-dev catch2 libfreetype-dev
 
 ENV ROOT=/opt/rdkitsqlite
