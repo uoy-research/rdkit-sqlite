@@ -32,3 +32,6 @@ RUN sed -i '/^LDFLAGS=/ s|$| -I/opt/boost/include|' Makefile
 RUN make
 RUN cp $ROOT/lib/* /lib
 RUN cp $ROOT/build/* /lib
+
+FROM scratch
+COPY --from=0 /lib/librdkit* /lib/
