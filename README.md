@@ -23,13 +23,13 @@ Both images are provided as packages on the GitHub Container Registry (`ghcr.io/
 
 Run the following command to build the library image:
 
-`$ docker build -t 'rdkitsqlite' -f docker/lib/Dockerfile .`
+`$ docker build -t 'rdkit-sqlite' -f docker/lib/Dockerfile .`
 
 If you would like to run the demo, you can then build and execute it as such:
 
 ```
-$ docker build -t 'rdkitsqlite-demo' -f docker/demo/Dockerfile .
-$ docker run -it rdkitsqlite-demo
+$ docker build -t 'rdkit-sqlite-demo' -f docker/demo/Dockerfile .
+$ docker run -it rdkit-sqlite-demo
 ```
 
 ### Manual
