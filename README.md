@@ -14,14 +14,14 @@ The library can be loaded from SQLite as such:
 
 ### Docker
 
-A Docker image has been provided to simplify integrating the library into larger projects.
+A Docker image has been provided containing the library statically linked against its dependencies, to simplify integrating the library into larger projects. An additional image is provided as an example of its usage.
 
 - `docker/Dockerfile` builds a minimal image containing just the library. It cannot be run.
 - `docker/demo/Dockerfile` builds the library and starts an interactive SQLite demo session with it loaded.
 
-The library is available as a pre-built Docker image on the GitHub Container Registry (soon) to speed up building and simplify integrating into larger projects. If you prefer, you can also build the Docker image yourself:
+Both images are provided as packages on the GitHub Container Registry (`ghcr.io/uoy-research/rdkit-sqlite:main` and `ghcr.io/uoy-research/rdkit-sqlite-demo:main`). If you prefer, you can also build them yourself.
 
-Run the following command:
+Run the following command to build the library image:
 
 `$ docker build -t 'rdkitsqlite' docker/`
 
