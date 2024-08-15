@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM debian:bookworm-slim
 RUN apt-get update -qq && apt-get install -y build-essential libsqlite3-dev sqlite3 git cmake catch2 libbz2-dev liblzma-dev libzstd-dev zlib1g-dev
 
 ###
