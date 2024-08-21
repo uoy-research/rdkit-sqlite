@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <cjson/cJSON.h>
 
 int canon_smiles(char *smiles) {
   char *pkl;
@@ -43,4 +44,42 @@ int substruct_match(char *smiles, char *smarts, int *match) {
   free(matches);
 
   return 0;
+}
+
+int get_descriptor(char *smiles, char *key, char **value) {
+    char *pkl;
+    size_t pkl_size;
+    
+    pkl = get_mol(smiles, &pkl_size, NULL);
+    if (pkl == NULL) { return 1; }
+
+    char *descriptors = get_descriptors(pkl, pkl_size);
+    free(pkl);
+
+    cJSON *json = cJSON_Parse(descriptors);
+    if (json == NULL) { return 2; }
+
+    cJSON *item = cJSON_GetObjectItemCaseSensitive(json, key);
+    if (item == NULL) { return 3; }
+
+    char *val = NULL;
+    if (cJSON_IsString(item) && (item->valuestring != NULL)) {
+        val = strdup(item->valuestring);
+    } else if (cJSON_IsNumber(item)) {
+        val = (char *)malloc(32);  // Allocate space for the number
+        if (val) {
+            snprintf(val, 32, "%g", item->valuedouble);
+        }
+    } else if (cJSON_IsBool(item)) {
+        val = strdup(cJSON_IsTrue(item) ? "true" : "false");
+    } else if (cJSON_IsNull(item)) {
+        val = strdup("null");
+    } else {
+        val = strdup(cJSON_PrintUnformatted(item));
+    }
+
+    cJSON_Delete(json);
+
+    *value = val;
+    return 0;
 }
