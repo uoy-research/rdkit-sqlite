@@ -4,7 +4,7 @@ SHELL=/bin/sh
 CC=gcc
 SRC=src/main.c src/utils.c
 CFLAGS=-g -fPIC -shared
-LDFLAGS=-I $(RDKIT)/Code -I $(RDKIT)/Code/MinimalLib -lrdkitcffi -Llib
+LDFLAGS=-Wl,-Bstatic -lcjson -Wl,-Bdynamic -I $(RDKIT)/Code -I $(RDKIT)/Code/MinimalLib -lrdkitcffi -Llib
 OUTPUT=librdkitsqlite
 
 all: $(OUTPUT)

@@ -7,6 +7,7 @@ ARG BOOST_PATCH_VERSION="0"
 ARG BOOST_DOT_VERSION="${BOOST_MAJOR_VERSION}.${BOOST_MINOR_VERSION}.${BOOST_PATCH_VERSION}"
 ARG BOOST_UNDERSCORE_VERSION="${BOOST_MAJOR_VERSION}_${BOOST_MINOR_VERSION}_${BOOST_PATCH_VERSION}"
 
+# Install Boost
 WORKDIR /opt
 RUN wget -q https://boostorg.jfrog.io/artifactory/main/release/${BOOST_DOT_VERSION}/source/boost_${BOOST_UNDERSCORE_VERSION}.tar.gz && \
   tar xzf boost_${BOOST_UNDERSCORE_VERSION}.tar.gz
@@ -18,6 +19,16 @@ ENV ROOT=/opt/rdkitsqlite
 WORKDIR $ROOT
 COPY . $ROOT
 
+# Install cJSON
+ENV CJSON_ROOT=/opt/cJSON
+RUN git clone https://github.com/DaveGamble/cJSON.git $CJSON_ROOT
+RUN mkdir -p $CJSON_ROOT/build
+WORKDIR $CJSON_ROOT/build
+RUN cmake .. -DBUILD_SHARED_LIBS=OFF
+RUN make
+RUN make install
+
+# Install RDKit
 ENV RDKIT_ROOT=$ROOT/rdkit
 RUN git clone https://github.com/rdkit/rdkit.git $RDKIT_ROOT
 RUN mkdir -p $RDKIT_ROOT/build
@@ -27,6 +38,7 @@ RUN make -j 2 cffi_test
 RUN Code/MinimalLib/cffi_test
 RUN mkdir -p $ROOT/lib && cp lib/* $ROOT/lib
 
+# Build library
 WORKDIR $ROOT
 RUN sed -i '/^LDFLAGS=/ s|$| -I/opt/boost/include|' Makefile
 RUN make
